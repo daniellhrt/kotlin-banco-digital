@@ -1,4 +1,5 @@
- fun testaContasDiferentes() {
+fun testaContasDiferentes() {
+
     val contaCorrente = ContaCorrente(
         "Daniel",
         1001
@@ -7,23 +8,39 @@
         "Fernanda",
         1002
     )
+    val contaSalario = ContaSalario(
+        "Henrique",
+        1003
+    )
 
-    contaCorrente.deposita(500.0)
-    contaPoupanca.deposita(500.0)
+    contaCorrente.deposita(1000.0)
+    contaPoupanca.deposita(1000.0)
+    contaSalario.deposita(500.0)
 
-    println("Saldo ${contaCorrente.saldo}")
-    println("Saldo ${contaPoupanca.saldo}")
+    println("Saldo conta corrente: ${contaCorrente.saldo}")
+    println("Saldo conta poupança: ${contaPoupanca.saldo}")
+    println("Saldo conta salário: ${contaSalario.saldo}")
     println()
 
-    contaCorrente.saca(10.0)
-    contaPoupanca.saca(10.0)
+    contaCorrente.saca(100.0)
+    contaPoupanca.saca(100.0)
+    contaSalario.saca(50.0)
+
     println("Valor após saque...")
-    println("Saldo ${contaCorrente.saldo}")
-    println("Saldo ${contaPoupanca.saldo}")
+    println("Saldo corrente ${contaCorrente.saldo}")
+    println("Saldo poupança ${contaPoupanca.saldo}")
+    println("Saldo salário ${contaSalario.saldo}")
     println()
 
-    contaCorrente.transfere(50.0, contaPoupanca)
-    println("Valor após trasferencia de R$50,00")
-    println("Saldo ${contaCorrente.saldo}")
-    println("saldo ${contaPoupanca.saldo}")
+    contaCorrente.transfere(25.0, contaPoupanca)
+    println("Valor após trasferencia de R$25,00")
+    println("Saldo conta corrente: ${contaCorrente.saldo}")
+    println("saldo conta poupança: ${contaPoupanca.saldo}")
+    println()
+
+    contaCorrente.transfere(25.0, contaSalario)
+    println("Valor após trasferencia de R$25,00 para conta salário")
+    println("Saldo conta corrente: ${contaCorrente.saldo}")
+    println("Saldo conta salário: ${contaSalario.saldo}")
+
 }
